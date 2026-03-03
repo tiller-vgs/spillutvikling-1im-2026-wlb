@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -21,8 +22,12 @@ public class WaveSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
+    private bool _WaveActive = false;
     void Update()
     {
+
+        if (!_WaveActive) return;
+        
         _timeUntilSpawn -= Time.deltaTime;
 
         if (_timeUntilSpawn <= 0)
@@ -35,4 +40,19 @@ public class WaveSpawner : MonoBehaviour
     {
         _timeUntilSpawn = Random.Range(_minimumSpawnTime, _maximumSpawnTime);
     }
+    
+    public void StartWave()
+    {
+        
+        Debug.Log("Wave Started");
+        _WaveActive = true;
+        SetTimeUntilSpawn();
+    }
+
+    public void StopWave()
+    {
+        _WaveActive = false;
+    }
+   
+   
 }
