@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [SerializeField] private Transform _player;
+
     [SerializeField]
     private GameObject _enemyPrefab;
 
@@ -26,16 +28,17 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
 
-        if (!_WaveActive) return;
-        
-        _timeUntilSpawn -= Time.deltaTime;
+     if (!_WaveActive) return;
 
-        if (_timeUntilSpawn <= 0)
-        {
-            Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-            SetTimeUntilSpawn();
-        }
-    }
+    _timeUntilSpawn -= Time.deltaTime;
+
+    if (_timeUntilSpawn <= 0)
+    {
+        GameObject enemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
+        enemy.GetComponent<EnemyFollow>().player = _player;
+
+        SetTimeUntilSpawn();
+    }}    
     private void SetTimeUntilSpawn()
     {
         _timeUntilSpawn = Random.Range(_minimumSpawnTime, _maximumSpawnTime);
