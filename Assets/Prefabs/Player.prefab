@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5137904249015740963}
   - component: {fileID: 4159537470390534657}
   - component: {fileID: 2552788549548652885}
+  - component: {fileID: 5195910014911618033}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -166,3 +167,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5195910014911618033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102792063668433178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f948d26d15435240b930edc35cbb810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  health: 0
+  maxHealth: 10

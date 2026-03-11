@@ -478,6 +478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3102792063668433178, guid: f02d76f42af89c14196026ce405bd937, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -485,6 +489,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3102792063668433178, guid: f02d76f42af89c14196026ce405bd937, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7493529041546461336}
+    - targetCorrespondingSourceObject: {fileID: 3102792063668433178, guid: f02d76f42af89c14196026ce405bd937, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7493529041546461340}
   m_SourcePrefab: {fileID: 100100000, guid: f02d76f42af89c14196026ce405bd937, type: 3}
 --- !u!4 &7493529041546461335 stripped
 Transform:
@@ -503,7 +510,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 299a6e2f38bb84647ad4c48bc98d2b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  movingSpeed: 5
+  movingSpeed: 10
+--- !u!114 &7493529041546461340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 344751324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f948d26d15435240b930edc35cbb810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  health: 0
+  maxHealth: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
