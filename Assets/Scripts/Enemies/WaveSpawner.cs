@@ -53,6 +53,37 @@ public class WaveSpawner : MonoBehaviour
     {
         _WaveActive = false;
     }
-   
-   
+
+    private WaveManager waveManager;
+
+    void Start()
+    {
+       
+        waveManager = Object.FindObjectOfType<WaveManager>();
+
+        if (waveManager != null)
+        {
+            waveManager.RegisterEnemy();
+        }
+    }
+
+    // When enemy health = 0
+    public void TakeDamage(int damage)
+    {
+        // Take damage system here !!!!!!!
+
+        Die();
+    }
+
+    void Die()
+    {
+        if (waveManager != null)
+        {
+            waveManager.EnemyDied();
+        }
+        Destroy(gameObject);
+    }
 }
+   
+   
+
