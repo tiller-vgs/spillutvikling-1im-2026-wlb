@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RewardManager : MonoBehaviour
 {
-    // Need to add some different rewards for eks. health, dmg and idk 
+    // Need to add some different rewards for eks. health, dmg and idk
     public GameObject rewardPanel;
     
     public void ShowRewards()

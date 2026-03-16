@@ -67,23 +67,36 @@ public class WaveSpawner : MonoBehaviour
         }
     }
 
-    // When enemy health = 0
-    public void TakeDamage(int damage)
-    {
-        // Take damage system here !!!!!!!
-
-        Die();
-    }
+    public int xpValue = 20; // Hvor mye xp enemy gir
 
     void Die()
     {
+        
+        ExperienceManager expManager = Object.FindObjectOfType<ExperienceManager>();
+        if (expManager != null)
+        {
+            expManager.AddExperience(xpValue);
+        }
+
         if (waveManager != null)
         {
             waveManager.EnemyDied();
         }
+
         Destroy(gameObject);
     }
+
+    public int health = 50; // Enemy health
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 }
-   
    
 
